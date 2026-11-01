@@ -5,20 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>For Himanshi, With All My Heart 🐼🧸💖</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Three.js (r128) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-  <!-- Google Fonts: Handwritten & Cutesy Journaling -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;600;700&family=Marck+Script&family=Patrick+Hand&family=Sacramento&display=swap" rel="stylesheet">
@@ -58,7 +50,7 @@
       background-color: #fff0f3;
       color: #2b1810;
       overflow-x: hidden;
-      overflow-y: hidden; /* Controlled unlock in enterWorld */
+      overflow-y: hidden;
       touch-action: manipulation;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
@@ -67,7 +59,6 @@
       min-height: 100dvh;
     }
 
-    /* Subtle Paper Grain Overlay */
     .paper-grain {
       position: fixed;
       inset: 0;
@@ -77,7 +68,6 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
-    /* Scrapbook Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -93,7 +83,6 @@
       background: linear-gradient(180deg, #ff4d6d 0%, #d90429 100%);
     }
 
-    /* Atmosphere Overlays */
     #sadAtmosphereOverlay {
       position: fixed;
       inset: 0;
@@ -107,7 +96,6 @@
       opacity: 1;
     }
 
-    /* Fluid Magnetic Cursor (Desktop) */
     @media (hover: hover) and (pointer: fine) {
       #fluidCursor {
         position: fixed;
@@ -151,7 +139,6 @@
       }
     }
 
-    /* Mobile Touch Ripple */
     .touch-ripple {
       position: fixed;
       width: 28px;
@@ -171,7 +158,6 @@
       }
     }
 
-    /* Marquee Ticker */
     .marquee-track {
       display: flex;
       width: 200%;
@@ -182,7 +168,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Responsive Section Paneling */
     .dimension-panel {
       width: 100%;
       min-height: 100dvh;
@@ -195,7 +180,6 @@
       box-sizing: border-box;
     }
 
-    /* 3D WebGL Canvas Layer */
     #threeCanvas {
       position: fixed;
       top: 0;
@@ -206,7 +190,6 @@
       z-index: 1;
     }
 
-    /* Scenic Horizon Silhouettes & Time of Day Backdrop System */
     #scenicBackdrop {
       position: fixed;
       inset: 0;
@@ -243,7 +226,6 @@
       transform: translateY(0);
     }
 
-    /* Ambient drifting cloud layers */
     .drifting-cloud-band {
       position: absolute;
       left: 0;
@@ -257,7 +239,6 @@
       animation: marqueeScroll 28s linear infinite reverse;
     }
 
-    /* Celestial Body (Sun / Sunset Glow / Crescent Moon) */
     #celestialOrb {
       position: absolute;
       width: 120px;
@@ -269,7 +250,6 @@
       opacity: 0.85;
     }
 
-    /* Dimension Ambient Overlay */
     #dimensionOverlay {
       position: fixed;
       inset: 0;
@@ -279,7 +259,6 @@
       opacity: 0.35;
     }
 
-    /* REFINED: Airy, Translucent Scrapbook Paper Textures (Letting Landscape Shine Through) */
     .torn-paper {
       background: rgba(255, 253, 250, 0.72);
       backdrop-filter: blur(12px) saturate(120%);
@@ -301,7 +280,6 @@
       border-color: rgba(255, 117, 143, 0.35) !important;
     }
 
-    /* Washi Tape Strips */
     .washi-strip-pink {
       background: rgba(255, 179, 193, 0.88);
       clip-path: polygon(0% 4%, 3% 0%, 97% 2%, 100% 6%, 98% 95%, 95% 100%, 2% 98%, 0% 93%);
@@ -334,7 +312,6 @@
       position: relative;
     }
 
-    /* Screen shake for arcade catches/hazards */
     .screen-shake-light {
       animation: shakeLight 0.2s cubic-bezier(.36,.07,.19,.97) both;
     }
@@ -354,7 +331,6 @@
       40%, 60% { transform: translate3d(3px, -2px, 0); }
     }
 
-    /* Interactive Buttons */
     .sparkle-btn {
       position: relative;
       cursor: pointer;
@@ -370,12 +346,11 @@
       transform: translateY(1px) scale(0.98);
     }
 
-    /* Origami Modal */
     #origamiModal {
       position: fixed;
       inset: 0;
       z-index: 95;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       background: rgba(0, 0, 0, 0.55);
@@ -385,17 +360,39 @@
       transition: opacity 0.35s ease;
     }
     #origamiModal.active {
+      display: flex;
       opacity: 1;
       pointer-events: auto;
     }
 
-    /* Pop-Out Paradise */
+    #proposalDimension {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      overflow-y: auto;
+      min-height: 100dvh;
+    }
+    #proposalDimension.active {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     #paradiseScenery {
       position: fixed;
       inset: 0;
       min-height: 100dvh;
       z-index: 120;
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -405,9 +402,10 @@
       opacity: 0;
       overflow: hidden;
       perspective: 1200px;
-      transition: opacity 0.7s ease;
+      transition: opacity 0.6s ease;
     }
     #paradiseScenery.active {
+      display: flex;
       opacity: 1;
       pointer-events: auto;
     }
@@ -416,7 +414,6 @@
       transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Landscape Pure Peek Mode */
     body.peek-scenery-active main {
       opacity: 0.12 !important;
       filter: blur(3px);
@@ -435,14 +432,11 @@
 
   <div class="paper-grain"></div>
 
-  <!-- Dynamic Time-of-Day & Location Landscape System -->
   <div id="scenicBackdrop">
     <div id="skyOverlay" class="sky-gradient-overlay"></div>
     <div id="celestialOrb"></div>
 
-    <!-- Location 1: Dawn Mountains & Valleys (Morning) -->
     <div id="scene-mountains" class="scenic-horizon-layer active">
-      <!-- Floating Morning Clouds & Valley Mist -->
       <div class="drifting-cloud-band cloud-slow top-[18%] sm:top-[12%] opacity-60">
         <svg viewBox="0 0 1440 120" class="w-full h-auto" preserveAspectRatio="none">
           <ellipse cx="180" cy="50" rx="160" ry="24" fill="#ffffff" opacity="0.45"/>
@@ -456,7 +450,6 @@
         <path d="M0,420 L0,150 L120,95 L250,175 L390,80 L520,185 L680,65 L830,195 L980,110 L1130,205 L1280,75 L1440,170 L1440,420 Z" fill="#fca5b4" opacity="0.35"/>
         <path d="M0,420 L0,200 Q180,120 370,190 T820,145 Q1130,95 1440,225 L1440,420 Z" fill="#f4728f" opacity="0.5"/>
         <path d="M0,420 L0,240 C140,190 280,240 460,210 C690,170 880,260 1140,215 C1310,185 1400,245 1440,250 L1440,420 Z" fill="#e04e70" opacity="0.45"/>
-        <!-- Folded Paper Pine Ridge Line -->
         <g fill="#b92b51" opacity="0.58">
           <polygon points="40,280 60,240 80,280"/>
           <polygon points="65,285 85,235 105,285"/>
@@ -472,7 +465,6 @@
       </svg>
     </div>
 
-    <!-- Location 2: Sunset / Twilight City Skyline -->
     <div id="scene-skyline" class="scenic-horizon-layer">
       <div class="drifting-cloud-band cloud-slow top-[12%] sm:top-[6%] opacity-70">
         <svg viewBox="0 0 1440 180" class="w-full h-auto" preserveAspectRatio="none">
@@ -491,7 +483,6 @@
         </svg>
       </div>
 
-      <!-- City Skyline Buildings Silhouette -->
       <svg viewBox="0 0 1440 380" class="w-full h-auto max-h-[46vh] min-h-[220px] object-cover" preserveAspectRatio="none">
         <defs>
           <linearGradient id="skylineDistantGrad" x1="0" y1="0" x2="0" y2="1">
@@ -508,13 +499,9 @@
 
         <rect x="0" y="210" width="1440" height="70" fill="url(#skylineDistantGrad)" opacity="0.25" filter="blur(16px)"/>
 
-        <!-- Tier 1: Far Distance Silhouettes -->
         <path d="M0,380 L0,225 L35,225 L35,210 L85,210 L85,235 L135,235 L135,190 L145,190 L145,160 L147,160 L147,190 L175,190 L175,245 L225,245 L225,175 L255,175 L255,155 L280,155 L280,250 L350,250 L350,195 L395,195 L395,235 L465,235 L465,165 L475,165 L475,140 L477,140 L477,165 L510,165 L510,230 L575,230 L575,200 L625,200 L625,245 L695,245 L695,180 L735,180 L735,235 L805,235 L805,185 L855,185 L855,240 L925,240 L925,170 L960,170 L960,148 L962,130 L964,148 L990,148 L990,235 L1075,235 L1075,190 L1115,190 L1115,245 L1185,245 L1185,175 L1235,175 L1235,225 L1305,225 L1305,195 L1365,195 L1365,240 L1440,240 L1440,380 Z" fill="url(#skylineDistantGrad)" opacity="0.75"/>
-        
-        <!-- Tier 2: Midground Urban Skyline -->
         <path d="M0,380 L0,250 L45,250 L45,180 L105,180 L105,260 L155,260 L155,218 L205,218 L205,188 L235,188 L235,265 L305,265 L305,170 L335,170 L335,150 L340,150 L340,170 L360,170 L360,270 L435,270 L435,228 L475,228 L475,198 L525,198 L525,258 L605,258 L605,158 L640,158 L640,135 L642,120 L644,135 L665,135 L665,268 L725,268 L725,218 L775,218 L775,252 L845,252 L845,182 L905,182 L905,262 L975,262 L975,208 L1025,208 L1025,248 L1095,248 L1095,172 L1155,172 L1155,258 L1215,258 L1215,212 L1265,212 L1265,268 L1335,268 L1335,188 L1395,188 L1395,252 L1440,252 L1440,380 Z" fill="url(#skylineGrad)"/>
         
-        <!-- Glowing Warm Lights & Windows -->
         <g fill="#ffd166">
           <rect x="65" y="196" width="7" height="9" rx="1" opacity="0.9" />
           <rect x="85" y="218" width="7" height="9" rx="1" opacity="0.85" />
@@ -534,9 +521,7 @@
       </svg>
     </div>
 
-    <!-- Location 3: The Cozy House & Home at Midnight -->
     <div id="scene-house" class="scenic-horizon-layer">
-      <!-- Midnight Sky Stars Field -->
       <div class="absolute inset-0 pointer-events-none opacity-80">
         <svg viewBox="0 0 1440 380" class="w-full h-full" preserveAspectRatio="none">
           <circle cx="120" cy="40" r="1.5" fill="#fff" opacity="0.8" class="animate-pulse"/>
@@ -555,7 +540,6 @@
         <path d="M0,400 L0,270 Q320,205 680,275 T1440,255 L1440,400 Z" fill="#17061a" opacity="0.85"/>
         <path d="M0,400 L0,310 Q400,255 820,318 T1440,298 L1440,400 Z" fill="#0d020e"/>
 
-        <!-- The Cozy Cottage -->
         <g transform="translate(620, 165)">
           <path d="M82,20 Q88,2 96,-18 T86,-45" stroke="#fcd5ce" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.55" stroke-dasharray="8 6" class="animate-pulse"/>
           <rect x="75" y="25" width="16" height="28" fill="#4a1525" rx="2"/>
@@ -569,7 +553,6 @@
           <circle cx="87" cy="76" r="26" fill="#ffd166" opacity="0.4" filter="blur(7px)"/>
         </g>
 
-        <!-- Paper Trees -->
         <g fill="#180315">
           <ellipse cx="535" cy="255" rx="36" ry="58"/>
           <ellipse cx="500" cy="270" rx="32" ry="48"/>
@@ -579,7 +562,6 @@
           <ellipse cx="1200" cy="290" rx="48" ry="64"/>
         </g>
         
-        <!-- Fireflies -->
         <circle cx="580" cy="220" r="3.5" fill="#ffe066" class="animate-ping" opacity="0.75" style="animation-duration: 2.2s;"/>
         <circle cx="780" cy="210" r="2.5" fill="#ffe066" class="animate-ping" style="animation-delay: 0.6s; animation-duration: 2.8s;" opacity="0.8"/>
         <circle cx="720" cy="245" r="3" fill="#ffe066" class="animate-ping" style="animation-delay: 1.1s; animation-duration: 2.5s;" opacity="0.75"/>
@@ -592,15 +574,12 @@
   <div id="flashScreen" class="fixed inset-0 pointer-events-none z-50 opacity-0 bg-white"></div>
   <div id="effectOverlay" class="fixed inset-0 pointer-events-none z-40 overflow-hidden"></div>
 
-  <!-- Awwwards Fluid Magnetic Cursor (Desktop) -->
   <div id="fluidCursor" class="hidden md:flex">
     <span id="cursorText">HUG</span>
   </div>
 
-  <!-- WebGL Three.JS Canvas -->
   <canvas id="threeCanvas"></canvas>
 
-  <!-- 3D Heart Companion Floating Dialogue -->
   <div id="companionTag" class="fixed z-30 pointer-events-none transition-all duration-300 ease-out opacity-0 transform -translate-x-1/2 -translate-y-12">
     <div class="bg-white/80 backdrop-blur-md border border-petalRed/70 text-velvetRed font-note text-xs sm:text-sm px-3.5 py-1.5 rounded-2xl shadow-lg flex items-center gap-1.5 whitespace-nowrap">
       <span class="animate-pulse">💌</span>
@@ -608,11 +587,10 @@
     </div>
   </div>
 
-  <!-- Origami Letter Popup Modal -->
   <div id="origamiModal" onclick="closeOrigamiModal(event)">
     <div id="modalEnvelopeBox" class="torn-paper max-w-lg w-[92%] p-7 sm:p-9 rounded-[2.5rem] border-2 border-petalRed/80 shadow-2xl relative text-center transform scale-75 transition-transform duration-500" onclick="event.stopPropagation()">
       <div class="washi-strip-red absolute -top-4 left-1/2 -translate-x-1/2 w-44 h-7 rotate-[-1deg]"></div>
-      <button onclick="closeOrigamiModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-rose-100/90 text-petalRed hover:bg-petalRed hover:text-white font-cute font-bold flex items-center justify-center transition">✕</button>
+      <button onclick="closeOrigamiModal(event)" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-rose-100/90 text-petalRed hover:bg-petalRed hover:text-white font-cute font-bold flex items-center justify-center transition">✕</button>
       
       <span class="text-5xl block mb-2 animate-bounce">💌✨</span>
       <div class="postage-stamp inline-block px-4 py-1 rounded-full mb-3">
@@ -622,15 +600,12 @@
       <p id="modalLetterText" class="font-hand text-2xl sm:text-3xl text-zinc-800 leading-relaxed mb-6">
         "Himanshi, may your days always be filled with warm cups of chai, sleepy Sundays, soft laughter, and people who appreciate every spark of your magic."
       </p>
-      <button onclick="closeOrigamiModal()" class="sparkle-btn font-cute px-8 py-3 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white font-bold shadow-lg">
+      <button onclick="closeOrigamiModal(event)" class="sparkle-btn font-cute px-8 py-3 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white font-bold shadow-lg">
         Keep In My Heart 💖
       </button>
     </div>
   </div>
 
-  <!-- ========================================================================= -->
-  <!-- 0. ENTRANCE GATEWAY -->
-  <!-- ========================================================================= -->
   <div id="entranceOverlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#fff0f3] transition-all duration-1000 ease-in-out px-4 select-none min-h-[100dvh]">
     <div class="relative z-10 text-center max-w-md w-full space-y-6">
       
@@ -649,7 +624,6 @@
         </p>
       </div>
 
-      <!-- ENTRANCE 3D HEART TRIGGER -->
       <div class="py-4 relative flex flex-col items-center cursor-pointer group" onclick="enterWorld(event)">
         <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-rose-300/40 via-red-200/50 to-pink-300/40 blur-2xl absolute -top-4 pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
 
@@ -670,10 +644,8 @@
     </div>
   </div>
 
-  <!-- Scroll Progress Indicator -->
   <div id="progressBar" class="fixed top-0 left-0 h-1.5 bg-gradient-to-r from-pink-400 via-petalRed to-velvetRed z-50"></div>
 
-  <!-- Scrapbook Header Badge & Floating Scenery Peek Toggle -->
   <header class="fixed top-0 inset-x-0 z-30 w-full pt-3 pb-2 px-4 sm:px-6 flex justify-between items-center max-w-5xl mx-auto pointer-events-none">
     <div class="flex items-center gap-2 pointer-events-auto bg-white/70 backdrop-blur-md px-3.5 py-1 rounded-full border border-rose-200/60 shadow-sm">
       <span class="w-2.5 h-2.5 rounded-full bg-petalRed animate-ping"></span>
@@ -681,7 +653,6 @@
     </div>
     
     <div class="flex items-center gap-2.5 pointer-events-auto">
-      <!-- Quick Peek Landscape Toggle: Lets user dim content and enjoy the art backdrop -->
       <button onclick="toggleSceneryPeek()" class="sparkle-btn bg-white/75 backdrop-blur-md border border-rose-200/80 text-petalRed hover:bg-white text-xs font-cute px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5 transition">
         <span id="peekIcon">👁️</span>
         <span id="peekText" class="hidden sm:inline">Focus Landscape</span>
@@ -693,10 +664,8 @@
     </div>
   </header>
 
-  <!-- MAIN SCROLL CONTENT CONTAINER -->
   <main class="relative z-20 w-full overflow-visible">
 
-    <!-- SECTION 0: INTRO -->
     <section id="sec-intro" class="dimension-panel">
       <div class="max-w-xl w-full mx-auto text-center relative flex flex-col items-center">
         
@@ -718,7 +687,6 @@
           </p>
         </div>
 
-        <!-- REFINED: Translucent, Floating Mini-Card -->
         <div class="intro-card-el torn-paper border border-rose-200/70 rounded-3xl p-5 sm:p-7 mt-5 max-w-lg mx-auto shadow-lg relative rotate-[0.5deg]">
           <div class="washi-strip-red absolute -top-3 right-8 w-20 h-5 rotate-[3deg]"></div>
           <div class="washi-strip-gold absolute -bottom-3 left-8 w-16 h-4 rotate-[-2deg]"></div>
@@ -744,7 +712,6 @@
       </div>
     </section>
 
-    <!-- SECTION 1: GENUINE COMPLIMENTS CAROUSEL -->
     <section id="sec-compliments" class="dimension-panel">
       <div class="max-w-3xl w-full mx-auto relative flex flex-col items-center">
         
@@ -760,7 +727,6 @@
           </p>
         </div>
 
-        <!-- Cards Deck (Refined Translucent Silhouette) -->
         <div class="w-full relative min-h-[290px] sm:min-h-[260px] flex items-center justify-center px-2">
           
           <div class="comp-card comp-card-1 max-w-md w-full torn-paper border border-rose-300/80 rounded-3xl p-5 sm:p-7 rotate-[-1deg] shadow-xl transition-all duration-300">
@@ -839,7 +805,6 @@
       </div>
     </section>
 
-    <!-- SECTION 2: THE "I LOVE YOU" CRIMSON CORE (Framed Over Sunset Skyline) -->
     <section id="sec-loveyou" class="dimension-panel">
       <div class="max-w-3xl w-full mx-auto relative flex flex-col items-center text-center">
         
@@ -855,7 +820,6 @@
           </p>
         </div>
 
-        <!-- Compact, Frosted Crimson Box (Revealing Background Sunset Colors) -->
         <div class="love-elem-center torn-paper-dark border-2 border-pink-400/30 rounded-[2.5rem] p-5 sm:p-8 text-center shadow-2xl relative overflow-hidden my-2 max-w-xl text-white w-full">
           <div class="washi-strip-red absolute -top-4 left-1/2 -translate-x-1/2 w-40 h-6 rotate-1"></div>
           
@@ -905,7 +869,6 @@
       </div>
     </section>
 
-    <!-- SECTION 2.5: RETRO ARCADE (Slim Frosted Arcade Station) -->
     <section id="sec-outgrid" class="dimension-panel">
       <div class="max-w-3xl w-full mx-auto relative flex flex-col items-center">
         
@@ -939,7 +902,6 @@
             </div>
           </div>
 
-          <!-- Playable Game Canvas Container -->
           <div class="w-full relative rounded-2xl overflow-hidden border border-petalRed/80 bg-white/40 backdrop-blur-md shadow-inner">
             <div id="gameDamageFlash" class="absolute inset-0 bg-red-500/30 pointer-events-none opacity-0 transition-opacity duration-150 z-10"></div>
             <div id="gameCatchFlash" class="absolute inset-0 bg-rose-300/25 pointer-events-none opacity-0 transition-opacity duration-150 z-10"></div>
@@ -951,7 +913,7 @@
               <p class="font-note text-sm text-zinc-600 max-w-xs mb-3">
                 Move Bao left and right. Catch hearts (+1), avoid storm clouds (-1 Life)!
               </p>
-              <button onclick="startLoveGame()" class="sparkle-btn font-cute px-7 py-2.5 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white font-bold shadow-lg text-sm">
+              <button type="button" onclick="startLoveGame(event)" class="sparkle-btn font-cute px-7 py-2.5 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white font-bold shadow-lg text-sm">
                 ▶ Start Game
               </button>
             </div>
@@ -962,7 +924,7 @@
               <p id="gameOverScoreText" class="font-note text-base text-rose-100 max-w-xs mb-3">
                 You collected sweet moments for Himanshi!
               </p>
-              <button onclick="startLoveGame()" class="sparkle-btn font-cute px-6 py-2.5 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white font-bold shadow-lg text-xs flex items-center gap-1.5">
+              <button type="button" onclick="startLoveGame(event)" class="sparkle-btn font-cute px-6 py-2.5 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white font-bold shadow-lg text-xs flex items-center gap-1.5">
                 <span>🔄 Play Again for Himanshi</span>
               </button>
             </div>
@@ -977,10 +939,10 @@
                 Bao caught every spark of love!
               </p>
               <div class="flex flex-wrap justify-center gap-2">
-                <button onclick="openOrigamiLetter(event)" class="sparkle-btn font-cute px-5 py-2.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-xs shadow-xl flex items-center gap-1">
+                <button type="button" onclick="openOrigamiLetter(event)" class="sparkle-btn font-cute px-5 py-2.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-xs shadow-xl flex items-center gap-1">
                   <span>💌 Read Victory Letter</span>
                 </button>
-                <button onclick="startLoveGame()" class="sparkle-btn font-cute px-4 py-2.5 rounded-full bg-white/20 text-white font-bold text-xs border border-white/40 hover:bg-white/30">
+                <button type="button" onclick="startLoveGame(event)" class="sparkle-btn font-cute px-4 py-2.5 rounded-full bg-white/20 text-white font-bold text-xs border border-white/40 hover:bg-white/30">
                   <span>Play Again 🔄</span>
                 </button>
               </div>
@@ -999,7 +961,6 @@
       </div>
     </section>
 
-    <!-- SECTION 3: INTERACTIVE SCREEN-FILLING ACTION BUTTONS -->
     <section id="sec-buttons" class="dimension-panel">
       <div class="max-w-4xl w-full mx-auto relative flex flex-col items-center">
         
@@ -1017,7 +978,6 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
 
-          <!-- Button 1 -->
           <div class="btn-card-1 torn-paper border border-rose-200/80 rounded-3xl p-5 text-center space-y-3 shadow-lg relative flex flex-col justify-between">
             <div class="washi-strip-pink absolute -top-3 left-6 w-16 h-4 rotate-[-3deg]"></div>
             
@@ -1037,7 +997,6 @@
             </div>
           </div>
 
-          <!-- Button 2 -->
           <div class="btn-card-2 torn-paper border border-rose-200/80 rounded-3xl p-5 text-center space-y-3 shadow-lg relative flex flex-col justify-between">
             <div class="washi-strip-red absolute -top-3 right-6 w-16 h-4 rotate-[3deg]"></div>
 
@@ -1057,7 +1016,6 @@
             </div>
           </div>
 
-          <!-- Button 3 -->
           <div class="btn-card-3 torn-paper border border-rose-200/80 rounded-3xl p-5 text-center space-y-3 shadow-lg relative flex flex-col justify-between">
             <div class="washi-strip-gold absolute -top-3 left-8 w-16 h-4 rotate-[-2deg]"></div>
 
@@ -1082,7 +1040,6 @@
       </div>
     </section>
 
-    <!-- SECTION 4: THE FOREVER SCRAPBOOK & COZY MASCOTS -->
     <section id="sec-cuddle" class="dimension-panel">
       <div class="max-w-2xl w-full mx-auto relative flex flex-col items-center text-center">
         
@@ -1108,7 +1065,6 @@
             <svg id="mascotSvg" viewBox="0 0 320 280" class="w-48 h-48 sm:w-60 sm:h-60 mx-auto relative z-10 transition-transform duration-300 transform group-hover:scale-105 active:scale-95">
               <path d="M160,250 C90,195 20,140 20,75 C20,25 65,5 115,15 C136,19 152,32 160,45 C168,32 184,19 205,15 C255,5 300,25 300,75 C300,140 230,195 160,250 Z" fill="#ffe5ec" opacity="0.8" stroke="#ff758f" stroke-width="2.5" stroke-dasharray="6,6"/>
               
-              <!-- Brownie -->
               <g transform="translate(50, 90)">
                 <circle cx="30" cy="25" r="16" fill="#8d5b4c"/>
                 <circle cx="30" cy="25" r="9" fill="#f8ad9d"/>
@@ -1129,7 +1085,6 @@
                 <ellipse cx="86" cy="92" rx="12" ry="18" fill="#8d5b4c" transform="rotate(-30, 86, 92)"/>
               </g>
 
-              <!-- Bao -->
               <g transform="translate(150, 85)">
                 <circle cx="35" cy="26" r="16" fill="#1f2030"/>
                 <circle cx="90" cy="26" r="16" fill="#1f2030"/>
@@ -1177,8 +1132,7 @@
 
   </main>
 
-  <!-- 5. ULTIMATE FINALE DIMENSION -->
-  <div id="proposalDimension" class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-500 overflow-y-auto min-h-[100dvh]">
+  <div id="proposalDimension">
     <div id="proposalCard" class="torn-paper max-w-sm w-full max-h-[92dvh] overflow-y-auto p-5 sm:p-7 rounded-[2.5rem] border-2 border-petalRed shadow-2xl relative text-center transform scale-75 transition-all duration-500 flex flex-col justify-between my-auto">
       
       <div>
@@ -1223,7 +1177,7 @@
             My entire heart is yours, across every single dimension.
           </p>
         </div>
-        <button onclick="closeProposalDimension()" class="sparkle-btn font-cute px-6 py-2.5 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white text-xs font-bold shadow-lg uppercase tracking-wider">
+        <button onclick="closeProposalDimension(event)" class="sparkle-btn font-cute px-6 py-2.5 rounded-full bg-gradient-to-r from-petalRed to-velvetRed text-white text-xs font-bold shadow-lg uppercase tracking-wider">
           Return To Our Scrapbook 🌸
         </button>
       </div>
@@ -1231,9 +1185,8 @@
     </div>
   </div>
 
-  <!-- 6. FULL-SCREEN 3D POP-OUT PARADISE SCENERY (ON YES) -->
   <div id="paradiseScenery">
-    <button onclick="closeParadiseScenery()" class="sparkle-btn absolute top-5 right-5 z-30 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-petalRed font-cute text-xs sm:text-sm font-bold shadow-xl border border-rose-200 flex items-center gap-1.5 hover:bg-petalRed hover:text-white transition">
+    <button onclick="closeParadiseScenery(event)" class="sparkle-btn absolute top-5 right-5 z-30 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-petalRed font-cute text-xs sm:text-sm font-bold shadow-xl border border-rose-200 flex items-center gap-1.5 hover:bg-petalRed hover:text-white transition">
       <span>✕ Return to World</span>
     </button>
 
@@ -1305,19 +1258,12 @@
     <p>Crafted exclusively for Himanshi • Hand-folded with paper, love & cuddles</p>
   </footer>
 
-  <!-- Floating Toast Message -->
   <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/90 backdrop-blur-md border border-petalRed text-velvetRed font-note text-base sm:text-lg px-5 py-2 rounded-full shadow-2xl pointer-events-none opacity-0 translate-y-8 transition-all duration-300 flex items-center gap-2">
     <span>💖</span>
     <span id="toastText">For Himanshi</span>
   </div>
 
-  <!-- ========================================================================= -->
-  <!-- MODULAR JAVASCRIPT ARCHITECTURE (Optimized, Encapsulated & Reactive) -->
-  <!-- ========================================================================= -->
   <script type="module">
-    /* =========================================================================
-     * MODULE 1: CORE APPLICATION STORE & UTILITIES
-     * ========================================================================= */
     const AppStore = {
       hasEntered: false,
       isPaused: false,
@@ -1349,9 +1295,6 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-    /* =========================================================================
-     * MODULE 2: THREE.JS ENGINE (HIGH-PERFORMANCE ZERO-ALLOCATION RENDER LOOP)
-     * ========================================================================= */
     const ThreeEngine = (() => {
       const canvas = document.getElementById('threeCanvas');
       const isMobile = window.innerWidth < 768;
@@ -1387,7 +1330,6 @@
       rimLight.position.set(12, -8, -6);
       scene.add(rimLight);
 
-      // Procedural 3D Origami Geometries
       function createMiniHeartGeometry() {
         const shape = new THREE.Shape();
         shape.moveTo(0, 0.3);
@@ -1514,7 +1456,6 @@
         particleObjects.push(mesh);
       }
 
-      // 3D Split-Shell Origami Locket Heart
       const artifactGroup = new THREE.Group();
       scene.add(artifactGroup);
 
@@ -1630,7 +1571,6 @@
 
         renderer.render(scene, camera);
 
-        // Track companion tag projection
         artifactGroup.getWorldPosition(projVector);
         projVector.project(camera);
 
@@ -1665,9 +1605,6 @@
       };
     })();
 
-    /* =========================================================================
-     * MODULE 3: SCENIC HORIZON & SCROLL SYSTEM
-     * ========================================================================= */
     const HorizonThemes = {
       'sec-intro': {
         skyGradient: 'linear-gradient(180deg, #ffd3b6 0%, #ffaaa5 30%, #ff8b94 65%, #fff0f3 100%)',
@@ -1891,9 +1828,6 @@
       });
     }
 
-    /* =========================================================================
-     * MODULE 4: RETINA ARCADE GAME (RESIZEOBSERVER & LEAK-FREE ENGINE)
-     * ========================================================================= */
     const ArcadeGame = (() => {
       const gCanvas = document.getElementById('gameCanvas');
       const gCtx = gCanvas ? gCanvas.getContext('2d') : null;
@@ -2017,7 +1951,6 @@
 
         gCtx.clearRect(0, 0, logicalWidth, logicalHeight);
 
-        // Grid
         gCtx.save();
         gCtx.strokeStyle = 'rgba(255, 179, 193, 0.25)';
         gCtx.lineWidth = 1;
@@ -2033,7 +1966,6 @@
         const tilt = Math.max(-0.2, Math.min(0.2, (playerX - lastPlayerX) * 0.025));
         lastPlayerX = playerX;
 
-        // Draw Player
         gCtx.save();
         gCtx.translate(playerX + playerWidth / 2, logicalHeight - 20);
         gCtx.rotate(tilt);
@@ -2052,7 +1984,6 @@
         gCtx.fillText('🧺', 17, -2);
         gCtx.restore();
 
-        // Dropping items
         for (let i = items.length - 1; i >= 0; i--) {
           const it = items[i];
           it.y += it.speed;
@@ -2115,7 +2046,6 @@
           if (it.y > logicalHeight + 30) items.splice(i, 1);
         }
 
-        // Particles
         for (let pIdx = particles.length - 1; pIdx >= 0; pIdx--) {
           const pt = particles[pIdx];
           pt.x += pt.vx;
@@ -2141,7 +2071,6 @@
           gCtx.restore();
         }
 
-        // Popups
         for (let fIdx = popups.length - 1; fIdx >= 0; fIdx--) {
           const fl = popups[fIdx];
           fl.y -= 1.4;
@@ -2234,9 +2163,6 @@
       };
     })();
 
-    /* =========================================================================
-     * MODULE 5: EFFECTS & INTERACTIVE MODALS
-     * ========================================================================= */
     const EffectsSystem = (() => {
       let lastStampedeTime = 0;
       let lastShieldTime = 0;
@@ -2371,11 +2297,9 @@
           }
           lastAvalancheTime = now;
 
-          // GUARANTEE: Never trigger proposal dimension
           const proposalModal = document.getElementById('proposalDimension');
-          if (proposalModal && !proposalModal.classList.contains('pointer-events-none')) {
-            proposalModal.classList.add('opacity-0', 'pointer-events-none');
-            proposalModal.classList.remove('opacity-100', 'pointer-events-auto');
+          if (proposalModal && proposalModal.classList.contains('active')) {
+            proposalModal.classList.remove('active');
           }
 
           AppStore.showToast("Infinite love avalanche showering Himanshi! 💖✨");
@@ -2448,7 +2372,8 @@
           AppStore.showToast("Unfolding a handwritten note... 💌");
         },
 
-        closeOrigamiModal() {
+        closeOrigamiModal(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
           const modal = document.getElementById('origamiModal');
           const box = document.getElementById('modalEnvelopeBox');
           if (modal && box) {
@@ -2461,9 +2386,6 @@
       };
     })();
 
-    /* =========================================================================
-     * MODULE 6: PROPOSAL FLOW & PARADISE UNIVERSE
-     * ========================================================================= */
     const ProposalFlow = (() => {
       let noPhase = 0;
       const btnNo = document.getElementById('btnNo');
@@ -2539,8 +2461,7 @@
           resetProposalState();
 
           if (proposalDimension && proposalCard) {
-            proposalDimension.classList.remove('opacity-0', 'pointer-events-none');
-            proposalDimension.classList.add('opacity-100', 'pointer-events-auto');
+            proposalDimension.classList.add('active');
             gsap.fromTo(proposalCard, 
               { scale: 0.8, y: 20, opacity: 0 }, 
               { scale: 1, y: 0, opacity: 1, duration: 0.45, ease: 'back.out(1.4)' }
@@ -2622,8 +2543,7 @@
           rainDrops?.classList.add('hidden');
 
           if (proposalDimension) {
-            proposalDimension.classList.add('opacity-0', 'pointer-events-none');
-            proposalDimension.classList.remove('opacity-100', 'pointer-events-auto');
+            proposalDimension.classList.remove('active');
           }
 
           gsap.to(ThreeEngine.artifactTransform, {
@@ -2657,29 +2577,30 @@
           AppStore.showToast("Infinite happiness unlocked! Himanshi loves me too! 💖✨");
         },
 
-        closeParadise() {
+        closeParadise(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
           const scenery = document.getElementById('paradiseScenery');
           const stage = document.getElementById('sceneryStage');
-          if (scenery) {
-            if (stage) {
-              gsap.to(stage, {
-                scale: 0.4, rotateX: -20, opacity: 0, duration: 0.45, ease: 'power2.in',
-                onComplete: () => { scenery.classList.remove('active'); }
-              });
-            } else {
-              scenery.classList.remove('active');
-            }
+          if (!scenery || !scenery.classList.contains('active')) return;
+
+          if (stage) {
+            gsap.to(stage, {
+              scale: 0.4, rotateX: -20, opacity: 0, duration: 0.45, ease: 'power2.in',
+              onComplete: () => { scenery.classList.remove('active'); }
+            });
+          } else {
+            scenery.classList.remove('active');
           }
           gsap.to(ThreeEngine.artifactTransform, { z: 13, split: 0, scale: 1.6, duration: 1.2, ease: 'power2.out' });
         },
 
-        closeProposal() {
+        closeProposal(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
           if (proposalDimension) {
             gsap.to(proposalCard, {
               scale: 0.7, opacity: 0, duration: 0.3, ease: 'power2.in',
               onComplete: () => {
-                proposalDimension.classList.add('opacity-0', 'pointer-events-none');
-                proposalDimension.classList.remove('opacity-100', 'pointer-events-auto');
+                proposalDimension.classList.remove('active');
               }
             });
           }
@@ -2687,9 +2608,6 @@
       };
     })();
 
-    /* =========================================================================
-     * MODULE 7: PAGE LIFECYCLE, EVENT BUS & GLOBAL EXPORTS
-     * ========================================================================= */
     let currentCompIdx = 0;
     const compCards = ['.comp-card-1', '.comp-card-2', '.comp-card-3', '.comp-card-4'];
 
@@ -2734,26 +2652,24 @@
       });
     }
 
-    // Tab visibility handling for extreme power saving
     document.addEventListener('visibilitychange', () => {
       AppStore.isPaused = document.hidden;
       if (document.hidden) ArcadeGame.pause();
     });
 
-    // Window Resize Delegation
     window.addEventListener('resize', () => {
       ThreeEngine.handleResize();
       ScrollTrigger.refresh();
     });
 
-    // Make Paradise scenery closable by backdrop clicks
     document.getElementById('paradiseScenery')?.addEventListener('click', (e) => {
+      const scenery = document.getElementById('paradiseScenery');
+      if (!scenery || !scenery.classList.contains('active')) return;
       if (e.target.id === 'paradiseScenery' || e.target.closest('#sceneryStage') === null) {
-        ProposalFlow.closeParadise();
+        ProposalFlow.closeParadise(e);
       }
     });
 
-    // Bind all handlers to global window for pristine backwards-compatibility with DOM onclick
     window.enterWorld = (e) => {
       if (e) { e.preventDefault(); e.stopPropagation(); }
       if (AppStore.hasEntered) return;
@@ -2812,18 +2728,22 @@
     };
 
     window.triggerSoftHeartPulse = triggerSoftHeartPulse;
-    window.startLoveGame = () => ArcadeGame.start();
+    window.startLoveGame = (e) => {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      ArcadeGame.start();
+    };
     window.launchPandaStampede = (e) => EffectsSystem.launchPandaStampede(e);
     window.activateTeddyShield = (e) => EffectsSystem.activateTeddyShield(e);
     window.triggerMegaAvalanche = (e) => EffectsSystem.triggerMegaAvalanche(e);
     window.openOrigamiLetter = (e) => EffectsSystem.openOrigamiLetter(e);
-    window.closeOrigamiModal = () => EffectsSystem.closeOrigamiModal();
+    window.closeOrigamiModal = (e) => EffectsSystem.closeOrigamiModal(e);
     window.triggerFinaleStarlight = (e) => ProposalFlow.triggerFinale(e);
     window.handleLoveNo = (e) => ProposalFlow.handleNo(e);
     window.handleLoveYes = (e) => ProposalFlow.handleYes(e);
-    window.closeParadiseScenery = () => ProposalFlow.closeParadise();
-    window.closeProposalDimension = () => ProposalFlow.closeProposal();
+    window.closeParadiseScenery = (e) => ProposalFlow.closeParadise(e);
+    window.closeProposalDimension = (e) => ProposalFlow.closeProposal(e);
     window.mascotCuddleAction = (e) => {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
       const svg = document.getElementById('mascotSvg');
       if (svg) gsap.fromTo(svg, { scale: 1.15, y: -12 }, { scale: 1, y: 0, duration: 0.5, ease: 'bounce.out' });
       triggerSoftHeartPulse(e, "Bao & Brownie sent infinite cuddles! 🐾🧸");
